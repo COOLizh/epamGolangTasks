@@ -14,8 +14,9 @@ type Square struct {
 }
 
 // End сalculates the end coordinates of a square
-func (s Square) End() (uint, uint) {
-	return uint(s.start.x) + s.a, uint(s.start.y) + s.a
+func (s Square) End() (Point) {
+	var end Point = Point{s.start.x + int(s.a), s.start.y + int(s.a)}
+	return end 
 }
 
 // Perimeter calculates the perimeter of a square
