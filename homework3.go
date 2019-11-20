@@ -8,7 +8,10 @@ import (
 
 /*Task 1 : average([...]int) float64 function that returns
 an average value of array (sum / N)*/
-func average(array [6]int) float64 {
+func average(array []int) float64 {
+	if array == nil {
+		return 0
+	}
 	var sum int
 	for _, item := range array {
 		sum += item
@@ -48,21 +51,19 @@ func printSorted(m map[int]string) {
 		keys = append(keys, i)
 	}
 	sort.Ints(keys)
-	ans := make([]string, 0, len(m))
-	for _, key := range keys {
-		ans = append(ans, m[key])
+	for _, item := range keys {
+		fmt.Print(m[item], " ")
 	}
-	fmt.Println(ans)
+	fmt.Println()
 }
 
 func main() {
 	/*Task 1 : Implement average([...]int) float64 function
 	that returns an average value of array (sum / N)*/
-	var firstTaskArray [6]int
-	for i := 1; i <= 6; i++ {
-		firstTaskArray[i-1] = i
-	}
-	fmt.Println(average(firstTaskArray))
+	fmt.Println(average([]int{1, 2, 3, 4, 5, 6}))
+	var firstTaskSlice []int
+	fmt.Println(average(firstTaskSlice))
+	fmt.Println(average([]int{-1, 3, -2, -4}))
 
 	/*Task 2.1 : Write max([]string) string function that returns
 	the longest word from the slice of strings (the first if there are more than one).*/
