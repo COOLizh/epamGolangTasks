@@ -9,7 +9,7 @@ import (
 /*Task 1 : average([...]int) float64 function that returns
 an average value of array (sum / N)*/
 func average(array []int) float64 {
-	if array == nil {
+	if len(array) == 0 {
 		return 0
 	}
 	var sum int
@@ -22,7 +22,7 @@ func average(array []int) float64 {
 /*Task 2.1 : function that returns the longest word from the slice
 of strings (the first if there are more than one).*/
 func max(array []string) string {
-	if array == nil {
+	if len(array) == 0 {
 		return "There is no strings in slice!"
 	}
 	maxString := array[0]
