@@ -23,7 +23,7 @@ func average(array []int) float64 {
 of strings (the first if there are more than one).*/
 func max(array []string) string {
 	if len(array) == 0 {
-		return "There is no strings in slice!"
+		panic("There is no strings in slice!")
 	}
 	maxString := array[0]
 	for i := 1; i < len(array); i++ {
