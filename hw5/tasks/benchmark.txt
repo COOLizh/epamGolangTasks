@@ -1,0 +1,7 @@
+goos: linux
+goarch: amd64
+pkg: github.com/COOLizh/epam/epamGolangTasks/hw5/tasks
+Benchmark_MyStrToInt-4    	 7034510	       170 ns/op
+Benchmark_MyStrToInt2-4   	 4351287	       283 ns/op
+PASS
+ok  	github.com/COOLizh/epam/epamGolangTasks/hw5/tasks	2.895s

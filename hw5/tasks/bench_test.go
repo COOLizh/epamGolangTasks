@@ -5,9 +5,15 @@ import (
 )
 
 func Benchmark_MyStrToInt(b *testing.B) {
-	MyStrToInt("-9223372036854775808")
+	str := "-9223372036854775808"
+	for i := 0; i < b.N; i++ {
+		MyStrToInt(str)
+	}
 }
 
 func Benchmark_MyStrToInt2(b *testing.B) {
-	MyStrToInt2("-9223372036854775808")
+	str := "-9223372036854775808"
+	for i := 0; i < b.N; i++ {
+		MyStrToInt2(str)
+	}
 }
