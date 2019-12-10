@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+</head>
+<body>
+<div>
+    <span id="cookieToken"></span>
+    <form method="POST" action="/">     
+        <label>Name</label><input name="name" type="text" value="" />
+        <label>Address</label><input name="address" type="text" value="" />
+        <input type="submit" value="submit"/>
+    </form>
+</div>
+</body>
+<script>
+    document.getElementById('cookieToken').innerHTML=listCookies()
+    function listCookies() {
+        var theCookies = document.cookie.split(';');
+        var aString = '';
+        for (var i = 1 ; i <= theCookies.length; i++) {
+            aString += i + ' ' + theCookies[i-1] + "\n";
+        }
+        return aString;
+    }
+</script>
+</html>
