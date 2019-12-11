@@ -14,10 +14,11 @@ func Index(w http.ResponseWriter, r *http.Request) {
 		r.Header,
 	}
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
-	w.WriteHeader(http.StatusOK)
 	res, err := json.Marshal(ans)
 	if err != nil {
 		log.Fatal(err)
+		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
+		return
 	}
 	w.Write(res)
 }

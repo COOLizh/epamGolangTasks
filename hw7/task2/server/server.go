@@ -23,7 +23,6 @@ func main() {
 	for {
 		message, _ := bufio.NewReader(conn).ReadString('\n')
 		fmt.Print("Message Received:", string(message))
-		message = strings.TrimSuffix(message, "\n")
 		conn.Write([]byte(inputProcessing(strings.TrimSuffix(message, "\n")) + "\n"))
 	}
 }
