@@ -1,15 +1,12 @@
 package main
 
 import (
-	"context"
 	"fmt"
 	"log"
-	"time"
 
 	"github.com/COOLizh/epam/epamGolangTasks/hw8/task_databases/pkg/model"
 	"github.com/COOLizh/epam/epamGolangTasks/hw8/task_databases/pkg/repository/memory"
-	"go.mongodb.org/mongo-driver/mongo"
-	"go.mongodb.org/mongo-driver/mongo/options"
+	"github.com/COOLizh/epam/epamGolangTasks/hw8/task_databases/pkg/repository/mongodb"
 )
 
 const (
@@ -23,10 +20,12 @@ const (
 )
 
 func main() {
-	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
-	client, _ := mongo.Connect(ctx, options.Client().ApplyURI("mongodb://localhost:27017"))
-
-	repository := memory.NewContactsRepositoryMongo(client.Database("task_databases"))
+	db, err := mongodb.MongoConnect("localhost", "task_databases")
+	if err != nil {
+		panic(err)
+		return
+	}
+	repository := memory.NewContactsRepositoryMongo(db)
 
 	for {
 		fmt.Print(menu)

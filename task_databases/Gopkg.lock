@@ -26,6 +26,12 @@
   version = "v0.8.1"
 
 [[projects]]
+  name = "github.com/xakep666/mongo-migrate"
+  packages = ["."]
+  revision = "b6296c15c8d5306313226a3e4ed234f8c45dccc9"
+  version = "v0.2.1"
+
+[[projects]]
   branch = "master"
   name = "github.com/xdg/scram"
   packages = ["."]
@@ -64,6 +70,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "8fc4f154e836417b386a06e6b148f410fa285610c030a04db47df3e12f1acfdd"
+  inputs-digest = "73c5d53bf3bc1d4e283b335c9bb2bb269f91e0e8f92d250063f33bf18884cec3"
   solver-name = "gps-cdcl"
   solver-version = 1
